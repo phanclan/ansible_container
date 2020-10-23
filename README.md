@@ -15,6 +15,7 @@ docker run -v "${PWD}":/ansible/playbooks:ro \
 #  -v ~/.ansible/roles:/root/.ansible/roles \
 ```
 
+```shell
 time for i in 1 2 3; do
 ssh server-a-${i} << EOF
 mkdir -p /var/monkey1
@@ -25,7 +26,7 @@ chmod 777 /var/monkey2
 chmod 777 /var/monkey3
 EOF
 done
-
+```
 
 
 #multipass key located here Mac:

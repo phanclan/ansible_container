@@ -11,7 +11,7 @@ docker build --tag peterphan/ansible:latest . &
 ```shell
 docker run -v "${PWD}":/ansible/playbooks:ro \
   -v ~/.ssh:/root/.ssh:ro --rm \
-  phanclan/ansible:latest ansible-playbook playbook.yml -i hosts
+  peterphan/ansible_container:latest ansible-playbook playbook.yml -i hosts
 #  -v ~/.ansible/roles:/root/.ansible/roles \
 ```
 
@@ -32,3 +32,5 @@ done
 #multipass key located here Mac:
 /var/root/Library/Application\ Support/multipassd/ssh-keys/id_rsa
 
+multipass launch --name server-a-1 -c 1 -m 1536M -d 5G --cloud-init cloud-init.yaml
+multipass launch --name client-a-1 -c 1 -m 1024M -d 5G --cloud-init cloud-init.yaml
